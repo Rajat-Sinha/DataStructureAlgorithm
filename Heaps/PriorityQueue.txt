@@ -1,0 +1,35 @@
+Prority Queue
+	Abstract Data type such as stack or queue
+	But for every item has an additonal proeprty:Prority value
+	Abstract data types are just specification.Basically just simple interfaces and defining the concrete behaviour for stacks
+	In a Prority queue an element with high protiry is served before an element with lower prority
+	Prority queue are usualy implemented with heaps,but it can be implemented with self balancing trees as well
+	Heap is a data structure as well as abstract data types
+	Very similar to queues with some modification: when we would like to get the next item -> the highest prority element is retrieved first
+	No FIFO structure here
+Abstract Data Types				Data Structure
+Specification					Concrete
+Interfaces						Implementation
+Operations
+	insertWithPriority(data,prority)
+		sometimes we do not specify the prority basically for integer
+		This method will insert new item into the protiry queue.We have to specify the data we want to insert and prority associated with the given data
+	getHighestPriorityElement()
+		Returns the element with highest prority
+			We have to reconstruct the heap
+			Max heaps:return maximum element
+			Min heap:return minimum element
+	peek()
+		returns the element with highest priority:the structure does not change
+Sorting
+	The concept of the priority queues naturally suggest a sorting algorithm
+	Insert all the elements to be sorted into priority queues
+	squentially remove them:it will be the sorted order
+	Why is it working?
+		We have been discussing that priority queues rely heavily on the priorities
+		We take out items->the one with highest prority will be returned
+		Result:sequency of decreasing prorities
+		This is the sorted order
+		EG: Tree sort,heap sort
+		
+A priority queue can efficiently implemented using Heap Data Structures like Binary Heap, Fibonacci Heap. Assume that the number of insert and peek (operation to see the current highest priority item) and extraction (remove the highest priority item) operations are almost same. Hea

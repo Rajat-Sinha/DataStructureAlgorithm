@@ -1,0 +1,24 @@
+Breadth First Search(BFS):
+	We have a graph and we want to visit every node:then we can do it with BFS
+	We visit every vertex exactly once
+	We visit the neighbours then the neighbours of these new vertices and so on
+	Running time complexities:O(V+E)
+	Memory complexities is not good:we have to store a lot of references
+	It constructs a shortest path:Dijkstra algorithm does a BFS if all the edge weights are equal to 1 
+	FIFO Structure:First in First Out
+	Algorithm:
+		We have an empty queue at the begining and we keep checking whether we have visited the given node or not
+			keep iterationg untill  queue is not empty
+		bfs(vertex):
+			Queue queue
+			vertex set visited true
+			queue.enqueue(vertex)
+			while queue is not empty:
+				actual = queue.dequeue()
+				for v in actual neighbours:
+					if v is not visited:
+						v set visited true
+						queue.enqueue(v)
+		BFS is going to search every vertex on row by row basis
+	If we have N items stored in the balanaced tree then there will be N/2 leaf nodes
+	So we have to store O(N) items if we want to traverse a tree that contains N items

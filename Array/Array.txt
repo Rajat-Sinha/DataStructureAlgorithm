@@ -1,0 +1,56 @@
+Array List
+	A collection of elements/values each identified by an array index or key
+	
+	For multidimensional array:
+		x[2][3] = 2 is row index and 3 is column index
+	Array is 0(1)
+	but Reconstructing array as to create bigger array is o(N)
+	Most imp. features of array is the random access to the data
+Arrays Operation
+	Adding
+		Adding a value to empty array can be done untill array is full with o(1)
+	Insert
+		Inserting value to empty  array is very fast with O(1) operations
+		Inserting the values to the end of the list is constant time complexities with o(1)
+		But Inserting the values at the begining of the array is linear time complexities with O(N) as we have to shift the items
+		Inserting values to a index in which another valu exists for this we have to shift the value then insert new value  and this is o(N) linear time complexities
+	Remove
+		Remove the last item is constant time complexities with o(1)  very simple
+		Removing a value with a given index is linear time complexities with o(N) not simple as we have to shift the item
+
+An algorithm is made up of two independent time complexities f (n) and g (n). Then the complexities of the algorithm is in the order of max(f(n),g(n))
+		
+The expected number of inversions in any permutation on n elements is O(N^2)
+		
+The minimum number of comparisons required to determine if a given integer appears more than n/2 times in a sorted array of n integers is O(logN)		
+	Linearly search for the first occurrence of the element, once you find it (let at index i), check element at index i+n/2. If element is present at i+n/2 then return true else return false.
+
+Suppose the array is of size n and sorted in ascending order, then
+	The ith largest element would be simply the array[n−i] element.
+	Also, the ith smallest element would be simply the array[i−1] element.
+	While, the worst case time complexity for deleting an element from array can become O(n).	
+In C, we cannot have an array of void type and function types. For example, below program throws compiler error
+
+X[i][j][k]'th element in one dimensional array is equivalent to X[i*j*k + j*k + k]'th element in one dimensional array (Note that multi-dimensional arrays are stored in row major order i
+
+In C/C++, if we initialize an array with fewer members, all remaining members are automatically initialized as 0
+
+Applying the Address-of(&) operator before the array name gives the address of the whole array. Adding 1 to this address gives the address plus the sizeof whole array.
+
+*a = a[0]
+a[1] = *(a+1)
+a[i][j] = *(*(a+i)+j)
+
+The complexity of multiplying two matrices of order m*n and n*p is m*n*p
+
+Two dimensional arrays are also called
+	Tables arrays
+	Matrix arrays
+A variable P is called pointer if	P contains the address of an element in DATA.
+Records store the homogeneous data elements.
+Each data item in a record may be a group item composed of sub-items; those items which are indecomposable are called elementary items,atoms,scalars
+
+The difference between linear array and a record is
+	An array is suitable for homogeneous data but hte data items in a record may have different data type
+	In a record, there may not be a natural ordering in opposed to linear array.
+	A record form a hierarchical structure but a lienear array does not

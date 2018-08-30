@@ -1,0 +1,69 @@
+Hash
+	Search for a given item with a given key
+	We hve key-value pairs
+		key --------> slot in a set of buckets
+	index = h(key) 
+		where h is the hashfunction 
+		it maps keys to the indexes in the array
+	We have n items to be stored + m buckets in which we can store items
+	Keys are not always nonnegativeinteger.Wehave to do prehashing to map string keys to indexes of an array
+Hashing
+	We can map a certain key of any type to  a random array index
+		If we have integer we just have to use modulo opearator to transform the number into the range[0,m-1]
+		If the keys are string we can have the ascii values of the character and make some transformation in order to end up with an index to an array
+Hash Function
+	Distribute the keys uniformly into buckets
+	n:number of keys i.e. key value
+	m:number of buckets // size of array //hash table of size m
+	h(x) = n % m
+		we should use prime numbers both for size of the array and in our hash function to make sure the distribution of  generated indexes will be uniform
+		String keys: we could calculate the ascill value for each character,add them up -:> make % modulo
+Collision
+	A collision is where we map two keys to the same bucket
+	If hash function is perfect then there is no collision
+	Resolve Collision
+		Chaining
+			Store both the values at the same bucket
+			We use linked list to connect them
+			O(1) complexity get worse
+			Additional memory cost due to the refrences
+		Open Addressing
+			Generate a new index for the item
+			If collision occurs we find an empty slot instead
+				Linear probing
+					If a collision occurs we try the next slot
+					If there is collision too we keep trying the next slot untill we find  an empty slot
+				Quadratic probing
+					we trying slots 1,2,4,8 units far away
+				Rehasing 
+					We hash the result again in order to find an  empty slot
+				Average   Worst
+Space			 O(N)	   O(N)
+Search			 O(1)	   O(N)		
+Insert			 O(1)	   O(N)
+Delete			 O(1)	   O(N)
+					
+Dynamic Resizing
+	Load factor
+		number of entries divided by number of slots/bucket
+			n/m = load factor
+		if n/m is 0
+			hashtable is empty
+			There will be lot of memory wasted
+		If n/m is 1 
+			then hashtable is full
+			Probability of collision will be very very high
+			performance decrease
+	Performance depends on load factor
+	Space time tradeoff is important,the solution is to resize table,when its load factor exceeds given threshold
+			Operations will be slow
+	In Java when load factor is grater than 0.75,the hashmap will be resized automatically
+	In python the threshold is 0.66
+		Hash values depends on table's size so hashes of entries are changed when resizing and algorithm can'nt just copy data from old storage to new one
+		Resizing takes O(N) time to complete where N is  a number of entries in the table
+
+
+A technique for direct search is Hashing
+The searching technique that takes O(1) time to find a data is Hashing
+
+If h is any hashing function and is used to hash n keys in to a table of size m, where n<=m, the expected number of collisions involving a particular key x is less than 1.

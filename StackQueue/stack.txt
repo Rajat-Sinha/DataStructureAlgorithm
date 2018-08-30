@@ -1,0 +1,79 @@
+Stack
+	Abstract data type(interface)
+	Basic operation:pop(),push(),peek()
+	LIFO Structure: last in first out
+	Stack can be easily implemented with arrays or linked lists
+Push Operation:(add items at last)
+	put the given item to the top of the stack
+	O(1) complexities
+	Means the adding items to the stack
+Pop Operation:
+	Take the last item we have inserted to the top of the stack
+	O(1) complexities
+	size of items in stack changes
+	LIFO structure: Last In First Out
+Peek Operation
+	Return the item from the top of the stack without removing it
+	Means the it going to return the last item which we have inserted
+	Size of items in the stack remains same
+	Very simple operation
+	O(1) complexities
+	
+For Linkedlist
+	Push: O(1)
+	Pop: O(1)
+
+The term "push" and "pop" is related to the Stacks only not array,lists.	
+
+Stack Memory or Call Stack
+	Most important applications of the Abstract Data Type
+	It is a special region of the memory in the RAM
+	A call stack is an abstract data type that stores information about the active subroutines/methods/functions of a computer program
+	The details ar normally hidden and automatic in high level programming language
+	Stack stores temporary variables created by each function
+	Local Variables are on the stack,after function returns they are lost
+	Stack memory is limited as well as Ram is limited
+Heap Memory
+	The heap is a region of memory that is not managed automatically for you
+	This is a large region of memory unlike stack memory
+	Stack memory is fater than heap memory
+	C:malloc() and calloc() function with pointers
+	Java:reference types and objects are on the heap
+	Operating System is not going to manage heap memory for use
+	If we are not going to use an for example we have to remove it from the heap memory
+	Memory Leak
+		It is basically a situation when there are bad objects on the heap memory.We basically do not use these objects in classes
+Stack memory             			Heap Memory
+limited in size						no size limits
+fast access							slow access
+local variables 					objects
+Space is managed eficinlty by CPU	memory may be fragmented
+Varibales cannot be resized			variables can be resized//realloc()
+
+A queue can be implemented using two stack
+A stack can be implemented using two queues
+
+
+Stacck and Recursion
+	All the reccursive algortithms can be transformed into a simple method with stacks
+	If we use recursion,then the OS will use stacks anyway
+	The reccursive funcitons calls are pushed onto the stack untill we bump into the base case
+	Stack Overflow(Mising of base case in recursion)
+		If there are too many funcitons calls to be pushed onto the stack:the stack may get full with no more space left
+	Recursive method calls are going to be pilled up in the stack
+	
+Application:
+	Managing function calls
+	The stock span problem
+	Arithmetic expression evaluation
+	String reversal
+	Evaluation of postfix expression
+	Implementation of recursion
+		Job scheduling is not done by stack.
+	
+To evaluate an expression without any embedded function calls: One stack is enough
+
+Consider n elements that are equally distributed in k stacks. In each stack, elements of it are arranged in ascending order (min is at the top in each of the stack and then increasing downwards). Given a queue of size n in which we have to put all n elements in increasing order O(nlogK)
+	
+To DEQUEUE an item, simply POP. 
+To ENQUEUE an item, we can do following 3 operations 1) REVERSE 2) PUSH 3) REVERSE

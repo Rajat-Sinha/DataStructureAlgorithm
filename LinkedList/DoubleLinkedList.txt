@@ -1,0 +1,21 @@
+Double LinkedList:
+	They are composed of nodes and refrences/pointers pointing from one node to the other
+	The last and first refrences are poniters to a Null
+	We can access the head as well as tails as both are pointing towards null
+	Node class has two refrences
+		one pointing to the next node
+		one pointing to the previous node
+	A single node:
+		contains data-> can be an integer,double or custom object
+		contains a refrence/poniters pointing to the next node in the linked list
+		contains a refrence/poniters pointing to the previous node in the linked list
+		class Node{
+			data
+			Node nextNode
+			Node prevNode
+		}
+		Can be traversed both directions forward as well as backward
+Removing the item 
+	O(1) time complexities
+	we need the node only
+	

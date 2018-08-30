@@ -1,0 +1,32 @@
+DepthFirstSearch
+	Widely used graph traversal algorithm besides breadth-first search
+	Explores as far as possible along each branch before 
+	backtracking//BFS was a layer by layer algorithm
+	Is going to go as deep as possible on a single branch/tree
+	Time complexity of traversin a graph with DFS:O(V+E)
+	Memory complexity:A bit better than that of BFS
+	Two ways:
+		Recursion
+			def(vertex):
+				vertex set visited true
+				print vertex
+				for v in vertex neighbours:
+					if v is not visited:
+						dfs(v)
+					
+		Iteration
+			LIFO:Last in first out
+			def(vertex):
+				Stack stack
+				vertex set visited true
+				stack.push(vertex)
+				while stack not empty:
+					actual = stack.pop()
+					for v in actual neighbours:
+						if v is not visited:
+							v set visited true
+							stack.push(v)
+							
+	Here we have to backtrack(pop item form stack):so basicaly we just have to store as many items on the stack as the height of the tree: which is logN
+		So memory complexity will be O(logN)
+	

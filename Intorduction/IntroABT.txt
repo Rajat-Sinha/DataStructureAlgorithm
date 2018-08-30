@@ -1,0 +1,22 @@
+Abstract data types
+	Basically this is the model (logical description for a certain data structure)
+	It is super type in programming(so an interface in java)
+	stack->push() 
+		is going to add an item in the datastructure
+	stack->pop() 
+		is going to return and retrieve an item from the data structure
+	stack->peek() 
+		is going to return an item without removing it from the data structure
+Data structure
+	concrete implementation , actual representaion of the data
+	Aim is to be able to store and retrieve data in an efeicient manner
+Abstract data types      data structure
+	Stack					array,linkedlist
+	Queue					array,linkedlist
+	Prority queue				heap
+	Dictionary/hashmap			array
+The above table means that stack abstract data types with concerte behaviours and we can implement stack with the help of array or linked list
+
+ABT abd data structure are not independent from each other
+
+Abstract data types  are the specification and every abstract data types have an underlying data structure that's going to implement the behaviour that has been specified in the abstract

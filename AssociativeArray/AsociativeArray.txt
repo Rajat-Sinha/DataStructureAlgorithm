@@ -1,0 +1,11 @@
+AssociativeArrays:
+	AssociativeArrays / maps/ dictionaries are abstract data types
+	Composed of a collection of key-value pairs where each key appears only once in the collection
+	Most of the times we implment associative arrays with  hashtables but binary search trees can be used as well
+	The aim is to reach O(1) time complexity for most of the  operations
+	Supported Operations:
+		Adding key-value pairs to the collections
+		Removing key-value pairs from the collection
+		Update existing key-value pairs
+		Lookup of value associated with a given key(Search operation)
+		Do not support sort operation for hash wrap

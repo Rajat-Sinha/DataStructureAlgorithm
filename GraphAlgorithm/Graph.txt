@@ -1,0 +1,39 @@
+Graph Theory
+	Graph G(V,E) are mathematical structures to model pairwise realtions between given objects
+	A graph is made up  of vertices/nodes and edges
+	There are two tpes of graphs:
+		Directed: consists of directed edges means edges have direction pointing towards particular node/vertices
+		Undirected: consists of node/vertices and edges but in this case edges do not have any direction
+	Model Graph in the programming languages
+		Adjacent Matrixes
+			A matrix A constructed out of the vertices of the graph
+				the A(i,j) value in the matrix is 1 if there is a connection between node i and node j
+				else A(i,j) is 0
+		Edge list representation
+			We create  a Vertex class
+				It stores the neighbours accordingly
+					class Vertex
+						vertexName;
+						visited;
+						Vertex[] neighbours;
+Applications:
+	Shortest pasth algorithm(GPS,high frequencey trading)
+	Graph traversing:web crawlers for google
+	Spanning trees
+	Maximum flow problem:lots of problems can be reduced to maximum flow
+For an undirected graph with n vertices and e edges, the sum of the degree of each vertex is equal to 2e
+
+In a graph if e=[u, v], Then u and v are called
+	endpoints of e
+    adjacent nodes
+	neighbors
+n a graph if e=(u, v) means
+	e begins at u and ends at v
+	u is processor and v is successor
+	
+A connected graph T without any cycles is called
+	a tree graph
+	free tree
+	a tree
+
+If every node u in G is adjacent to every other node v in G, A graph is said to be Complete

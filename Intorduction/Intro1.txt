@@ -1,0 +1,17 @@
+Data Structutre 
+	Arrays
+	Linked Lists
+	Stacks
+	Queues
+	Binary Search Trees
+	Balanced Binary Trees
+	Heaps
+	Dictionaries
+	Tries
+
+Graph Algorithm 
+	Graph traversal algorithm: BFS and DFS
+	Shortest paths
+	spanning trees
+
+Sorting Algorithm

@@ -1,0 +1,11 @@
+Data Structures is to store data in an efficient way
+Data Structures mak sure that the running time will be better  for an algorithm
+
+following data structure is not non-linear type?
+	Strings
+	Lists
+	Stacks
+
+Dijkstra algorithm
+	Without a proper data structure (heap/ proirity queue) the running time would be quadratic // O(N^2)
+	Prority queue approach makes sure the runnning time will be far better // (ON*logN)

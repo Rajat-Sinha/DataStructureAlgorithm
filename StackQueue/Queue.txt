@@ -1,0 +1,42 @@
+Queue:
+	It is an abstract data type(interface)
+	Basic operation:
+		enqueue() adding item
+		dequeue() removing item
+		peek()
+	FIFO structure:
+		First in First out
+	Can be implemented with dynamic array as well as linkelist
+Enqueue:
+	Add item to the end of the queue
+	O(1) complexities
+Dequeue
+	Remove the item starting at the begining of the queue
+
+Application:
+	When a resource is shared among multiple consumers
+	When data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes
+	Load Balancing
+	
+A queue can be implemented using two stack
+A stack can be implemented using two queues
+
+Implementing QUEUES on a circular array is more efficient than implementing QUEUES on a linear array with two indices
+
+The minimum number of stacks needed to implement a queue is 2
+
+A priority queue can efficiently implemented using Heap Data Structures like Binary Heap, Fibonacci Heap. Assume that the number of insert and peek (operation to see the current highest priority item) and extraction (remove the highest priority item) operations are almost same.
+
+To keep the First In First Out order, a queue can be implemented using linked list in any of the given two ways.
+	In push operation, if new nodes are inserted at the beginning of linked list, then in pop operation, nodes must be removed from end
+	In push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from the beginning.
+
+To DEQUEUE an item, simply POP. 
+To ENQUEUE an item, we can do following 3 operations 1) REVERSE 2) PUSH 3) REVERSE
+
+We can use circular array to implement both(ENQUEUE and DEQUEUE operations) in O(1) time.
+
+Queue data structure can be used to implement Quick short algorithm but not least recently used (LRU) page fault algorithm.
+
+A data structure where elements can be added or removed at either end but not in the middle is Deque
+Input-restricted deque allows deletions at both ends of the list but insertion at only one end.

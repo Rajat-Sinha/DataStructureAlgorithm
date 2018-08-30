@@ -1,0 +1,206 @@
+Sorting
+	A sorting algorithm is an algorithm that puts elements of an array in a certain order
+	Numbers: numerical ordering
+	Strings,Characaters: alphabetical ordering
+	Comparison based algorithm
+		Bubble sort
+		Insertion sort
+		Selection sort
+		Merge sort
+		Quick Sort
+	Non-comparison based sorting
+		Radix sort
+		Bucket sort
+Features
+	Time complexity
+		O(N^2)
+		O(NlogN)
+		O(N)
+	In Place
+		In-place sort needs only O(1) memory beyond the items being sorted,so an in-place algorithm does not need any extraa memory
+			Quick sort is an inplace algorithm
+			Merge sort is not
+	Recursive
+		Some sorting algorithm are implemented in a recursive manner
+			Merge sort and Quick sort	
+	Stable
+		Stable sorting algorithms maintain the realtive order of records with equal values
+		Merge sort: stable
+		Quick sort: unstable
+Adaptive Algorithm
+	An adaptive algorithm is an algorithm that changes its behaviour based on information available at runtime
+	Adaptive sort:it takes advantage of existing order in its input
+	It  benefits from local orders:
+		the Algorithm will sort faster
+		Sometimes an unsorted array contains sequences that are sorted by default
+	Most of the times 
+		we just have to modify existing sorting algorithm in order to end up with an adaptive one
+	Comparison based algorithm have optimal O(NlogN) running time complexity
+	Adaptive sort takes advantages of the existing order of the input to try to achieve better times: maybe O(N) could be reached
+	The more presorted the input is,the faster it should be sorted
+	Heap sort,Merge sort: Not adaptive algorithm
+	Shell sort: Adaptive algorithm
+Bubble Sort:
+	Repeatedly steps through the list to be sorted,compares each pair of adjacent items and swaps them if they are in the wrong order
+	It is too slow and impractical for most problems even when comapred to insertion sort
+	It has worst case and average complexity: O(N^2)
+	It is not a practical sorting algorithm
+	It will not be efficient in the case of reverse-ordered collection
+	Stable sorting algorithm
+	Inplace algorithm:does not need any additional memory
+	Compare only adjacent Items only
+	bubblesort(array)
+		for i in range(len(array)-1):
+			for j in range(len(array)-1-i):
+				if array[j] > array[j+1]:
+					swap(array,j,j+1)
+	end
+Selection Sort
+	O(N^2) running time algorithm
+	Selection sort is noted for its simplicity and it has performance advantages over more complicated algorithm
+	Particularly useful when auxilary meomory is limited
+		Inplace algorithm
+	The algorithm divides the input list into two parts:
+		The subarray of items already sorted
+		The subarray of items remaining to be sorted that ocuupy the rest of the array
+	The algorithm proceeds by finding the smallest elements in the unsorted subarray
+	Exchange /swaps it with the leftmost unsorted element:Putting it in sorted order
+	Moving the array boundaries one element to the right
+	Inplace algorithm: No need for extraa memory
+	Selection sort almost always ouperforms bubble sort
+	Not a stable sort
+	Quite counter-intuitive:Selection sort and insertions ort are both typically faster for small arrays//arrays with 10-20items
+	Usual optimization method->Recursive algorithm switch to insertion sort or selection sort for small subarrays
+	Makes less writes than insertion sort
+	selectionSort(array):
+		for i in range(len(array)-1):
+			index = i
+			
+			//searcjing for smallest items
+			
+			for j in range(i+1,len(array)):
+				if array[j] < array[index]:
+					index = j
+			
+			if index not i:
+				swap(array,index,i)
+		end
+		
+Insertion Sort
+	It is a simple sorting algorithm that builds the final sorted array one item at a time
+	It has quadartic running time O(N^2)
+	On large datasets it is very inefficient but on arrays with 10-20 items it is quite good
+	Simple implementation
+	It is more efficient than other quadartic running itme sorting procedures such as bubble sort or selection sort
+	Adaptive algorithm:
+		Speeds up when array is already  subtanially sorted
+	Stable sort
+		Preserve the order of the items with equals keys
+	Inplace algorithm
+	Online algorithm
+	Insertion sort is faster for small subarrays than quick sort
+	Variant of insertion sort is shell sort
+	Sometimes selection sort is better: They ar very similar algorithm
+	Insertion sort requires nore writes because the inner loop can require shifting large sections of the sorted portion of the array
+	In general,Inserion sort will write to the array O(N^2) times  while selection sort  will write only O(N) times
+	insertionSort(array):
+		for i in range(1,len(array)):
+			j = i
+			while j > 0 and array[j-1] > array[j]:
+				swap(array,j,j-1)
+				j = j-1
+	To sort a list L consisting of a sorted list followed by a few “random” elements.
+Quick Sort
+	It is an efficient sorting algorithm
+	A well implemented quicksort can outperforms heapsort and merge sort: The main competitors of quicksort
+	A comparison based algorithm not able to be fater than linearithmic time complexity
+	The efficient implementation of quicksort is not stable,does not keep the relative order of items with equal values
+	In-place algorithm: Does not need any additional memory
+	Avarge case:
+		O(NlogN)
+	Worst case:
+		O(N^2)
+	Widely Used in programming languages
+		Primitive types: Usuallly quick sort is used
+		Reference types: Usuallly Merge sort is used
+	It is a divide and conquer algorithm
+		Pick an element from the array:
+			This is the pivot item
+		Partition Phase:
+			Rearrange the array so that all elements with values less than th pivot come before the pivot while all the elements with values greater than pivot comes after it and equal values can go either way
+			Recursively apply these steps on the subarrays
+			Base case for recursion:	
+				array of size zero or one never need to be sorted
+		Choosing the pivot item
+			If we choosing bad pivots,the running time will be quadratic
+				We can choose a pivot at random: usually working fine
+				Choose the middle index of the array as the pivot
+	Pseudocode:
+		quicksort(array,low,high):
+			if low >= high:
+				return
+			pivot = partition(array,low,high)
+			quicksort(array,low,pivot-1)
+			quicksort(array,pivot+1,high)
+		end
+		partition(array,low,high):
+			pivotIndex = (low+high)/2
+			swap(array,pivotIndex,high)
+			
+			i = low
+			for j in range(low,high):
+				if array[j] <= array[high]:
+					swap(array,i,j)
+					i++
+			swap(array,i,high)
+			returni
+		end
+Merge Sort
+	It is a divide and conquer algorithm
+	Comparison based algorithm with running time complexity O(NlogN)
+	It is a stable sorting algorithm
+	Not an In-place Algorithm
+	Heapsort requires O(1) auxillary space instead of mergesort O(N)
+	Mergesort need an additional memory
+	Mergesort is often the best choice for sorting a linkedlist:
+		In this situation it is relativly easy to implement a merge sort in such a way that it requires only O(1) extra space
+	Algorithm
+		Divide the array into two subarrays recursively
+		Sort these subarrays recursively with mergesort again
+		if there is only a single item left in the subarray->we consider it to be sorted by definition
+		Merge the subarrays to get the final sorted array
+	Pseudocode
+		mergesort(low,high):
+			if(low >= high):
+				return
+			middle = (low+high)/ 2
+			mergesort(low,middle)
+			mergesort(middle+1,high)
+			merge(low,middle,high)
+		merge(low,middle,high):
+			for i in range(low,high):
+				tempAray[i] = nums[i]
+			i = low
+			j = middle + 1
+			k = low
+			while i <= middle and j <= high:
+				if tempAray[i] <= tempAray[j]:
+					nums[k] = tempAray[i]
+					i++
+				else:
+					nums[k] = tempAray[j]
+					j++
+			while i <= middle:
+				nums[k] = tempAray[i]
+				k++;
+				i++;
+			while j <= high:
+				nums[k] = tempAray[j]
+				k++;
+				j++;
+		end
+	
+					Quicksort			Mergesort
+In-place			Yes					No
+Stable				No					Yes
+Time-complexity		O(N^2)				O(NlogN)

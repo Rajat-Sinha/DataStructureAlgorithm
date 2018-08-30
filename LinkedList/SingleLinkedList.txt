@@ -1,0 +1,105 @@
+LinkedList
+	Most imp. features of array is the sequenctial access to the data
+	LinkedList are composed of nodes and refrences/poniters pointing from one node to the other
+	The lat refrences is pointing to a NULL
+	Any node which pointing to the null is basically the LAST NODE
+	A single node:
+		contains data-> can be an integer,double or custom object
+		contains a refrence/poniters pointing to the next node in the linked list
+		class Node{
+			data
+			Node nextNode
+		}
+		Each node is composed of a data a reference/link to the next node in the sequence
+	Root of the Node:
+		it is the first node in the linkedlist
+		It is also called as head
+	Simple and very common data structure
+	Can be used to implement several other common data types:stacks,queues
+	Simple linked list by themselves do not allow random access to the data so we cannot use indexes getItem(index)
+	So basically we have to iterate through and visit all the nodes in the long lists in order to find an item for exple or remove an item etc
+Advantages:
+	LinkedList are dynamic data structure but array is not
+	Can allocate the needed memory in run-time
+	very efficient if we want to manipulate the first elements
+	Easy implementation
+	Can stroe items with different sizes:an array assumes every elements to be same
+	It's easier for a linked list to grow organically
+LinkedListOperations
+	Insertion
+		Inserting an item at the begining of the linkedlist is very simple,we have to just update the refrences: O(1) time complexities
+			linkedlist.insertAtStart(10)
+		Inserting items at the end of linkedlist:
+			not that very simple
+			we have to traverse the whole linked list to find the last node
+			For finding the last node: last node is pointing to the Null
+			We have to update the refrences when we get there which is O(N) time complexities
+	Remove
+	We need the node as well as predecessor
+		Remove item at the begining of the list is always very fast:
+			We do not have to search the item,we just need to update the refrences 
+			O(1) time complexities
+			linkedlist.removeStart()
+		Remove item at a given point of the list or at end is not fast
+			We have to search for the given item which may take lot of time if the item is at the end of the list
+			O(N) time complexities
+			linkedlist.remove(10)
+Search Operation:
+	Search Operation yields the same result for both the data structure
+	ArrayList search operation is very fast as compared to the linkedlist search operation
+	We can use random access with the arrays:
+		getItem(int index)
+		O(1) time complexities
+	LinkedList Operation is O(N) time complexities
+	ArrayList maintains index based system for its elements as it uses  array data structure implicitly which makes it faster for searching elemnt in the list
+	LinkedList requires traversal through all the items for searching an element
+	If we know index of the arraylist then O(1) if we donot then O(N)
+Deletion:
+	LinkedList is better as in arraylist we have to reconstruct the array when removing
+	LinkedList basically operates with pointers:removal only requires change in the pointer location which can be done very fast
+Memory Managemant
+	ArrayList do not need any extraa memory
+	LinkedList do need extra memory because of the refrences/pointers
+	arraylist are better they are memory friendly
+	
+						LinkedList		ArrayList
+Search		  				O(N)		   O(1) if index is known
+Insert at the start			O(1)		   O(N)
+Insert at the end			O(N)		   O(1)
+Remove item at the start	O(1)		   O(N)
+Remove item at the end		O(N)		   O(1)
+Wastespace					O(N)			0(Zero)
+
+The situation when in a linked list START=NULL is underflow
+
+One Way list:
+	grounded header list
+	circular header list
+	linked list with header and trailer nodes
+
+In worst case, n comparison are needed to search for an element in single linked list.
+In best case, it will take single comparison for an element, with complexity O(1).
+	
+We can now derive from temp->next->data, which implies that:
+First we go to address of ‘temp’ node and from there we fetch the successor node address(using ‘next’) and jumps to successor address where we are fetching the data information stored in it(using ‘data’).
+
+Is it possible to create a doubly linked list using only one pointer with every node.
+Yes, possible by storing XOR of addresses of previous and next nodes.
+
+Merge sort can be used to sort a random linked list with minimum time complexity?
+
+Both Merge sort and Insertion sort can be used for linked lists. The slow random-access performance of a linked list makes other algorithms (such as quicksort) perform poorly, and others (such as heapsort) completely impossible. Since worst case time complexity of Merge Sort is O(nlogn) and Insertion sort is O(n2), merge sort is preferred.
+
+Suppose there are n1 and n2 elements in the two sets respectively,then
+membership is linear search - O(n1+n2)
+cardinality is linear - O(n1+n2)
+for union, we need to ensure no duplicate elements should be present - O(n1n2) for each element we need to check if that element exists in other set
+for intersection also, for every element in set1 we need to scan set2 - O(n1n2)
+Hence, a combination of union and intersection will be the slowest.
+
+
+Implementing LISTS on linked lists is more efficient than implementing LISTS on an array for almost all the basic LIST operations.
+
+The minimum number of stacks needed to implement a queue is 2
+
+The best data structure to check whether an arithmetic expression has balanced parenthesis is a Stack

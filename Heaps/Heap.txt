@@ -1,0 +1,84 @@
+Heap
+	It is basilly a binary tree in which every single node can have two children a left child and a right child
+	Two main binary heap types:
+		min heap
+			In this the keys of the parent nodes are less than or equal to those of the children
+			the lowest key is in the root node
+		max heap
+			In this,the keys of the parent nodes are always greater than or equal to those of the children
+			The highest key is in the root nodes
+	It is complete and cannot be unbalanced
+	We insert every new item to the next available place
+	Applications:
+		Dijkstra's algorithm
+		Prims algorithm
+	The heap is one maximally efficient implementaion of a prority queue abstract data type
+	Ot has nothing to do with the pool of memory from whichc dynamiccally allocated memory is allocated
+Heap Properties
+	Complete
+		Construct the heap from left to right across each row
+		Of course the last row may not be completely full
+		There is no missing node from left to right in a layer
+	In a binary heap every node can have 2 children left child and right child
+	Min heap
+		the parent is always smaller than the values of the children
+	Max heap
+		the parent is always greater than the values of the children
+	O(1) complexities
+Represent heap as array
+	parent node: i
+	left child : 2i+1
+	right child: 2i+2
+Bulding a heap
+	First we insert the data to the heap and check whether the heap properties are met
+		if the heap properties are not met the we reconstruct the heap in order to make it valid heap
+		heapify process
+	It is an O(N) process to construct a heap
+	If reconstructing O(N) + O(logN) = O(N)
+	Inserting an item to the heap is just adding the data to the heap array with incremented index
+Remove Opearytion:
+	We just get rid of the item we want to delete.But there will be a hole in the tree.So we put the last item there and make sure the heap properties are valid with reconstructions
+	For finding the last item use same process heapArray[-1]
+	Deleting + Reconstructing:
+		O(1) + O(lognN) = O(logN)
+	Deleting arbitary node(search that node) + Reconstructing:
+		O(N) + O(lognN) = O(N)
+Heapsort
+	Comparison-based sorting algorithm
+	Use heap data structure rather than a linear time search to find the maximum
+	A bit slower in practice on most machines than a well implemented quicksort,it has the advantage of more favorable worst case O(NlogN) runtime
+	It is an in-place algorithm but it is not a stable sort
+	Does not need additional memory
+	Problems:
+		First We have to construct the heap itself from  the numbers 
+		we want ot sort O(N)
+	Keep swaping the root(because it is a heap,we know for certain that the root is the item with highest prority with) with the last element + maintain heap properties
+	We have to consider N items+have to make swapping if necessary
+		O(NlogN) complexities
+Running Time
+	Memory Complexities
+		N items we want to store in heap
+		Allocated memory for an array with size N O(N) memory complexity
+	Find the min/max 
+		O(1) Very Fast
+		Beacuse in a heap the highest prority is at the root node
+	Insert new item
+		We can insert at the next available space,so incrment the array index and insert it O(1) fast
+		But we have to make sure that heap properties are met it make take O(logN) time
+		O(log2N) because a node has at most log2N  parents so at most log2N swaps are needed
+	Remove item
+		We usually remove the root node
+		Removing it is quite fast:just delete it in O(1) time
+		But we have to make sure we met the heap properties O(logN) time  reconstruct the heap
+Binomial heap
+	similar to a binary heap but also supports quick merging of two heaps
+	It is important as an implementation of the mergeable heap abstract data type
+	Which is a prority queue basically + supporting merge opearation
+	A binomial heap is implemented as a collection of tree
+	Insertion O(logN) time cimplexity can be reduced to O(1) cwith the help of binomial heaps
+Fibonacci Heap
+	fater thean classic binary heap
+	Dijkstra shortest path algorithm and Pim's spanning tree algorithm run faster if thery rely on Fiboncaai heap instead of binary heap
+	Unlike binary heaps,it can have several children:number of children are usualyy kept low
+	we can achieve O(1) insert operation instead of O(logN)
+	Every node has degree at most O(logN) and size of a subtree rooted in a node of degree k is at least F(k+2) where F(k)  is the K-th fibonacci number
